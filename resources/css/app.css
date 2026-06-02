@@ -1,0 +1,35 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .app-row {
+        @apply mx-auto w-full border shadow-sm rounded-lg p-3 bg-white;
+    }
+
+    .app-subrow {
+        @apply flex items-center mb-2;
+    }
+    
+    .project-label {
+        @apply font-bold inline-block w-[160px];
+    }
+    
+    .project-badge {
+        @apply font-medium px-2 rounded-full;
+    }
+
+    .form-field {
+        @apply w-full border rounded-lg p-2.5 focus:outline-none;
+    }
+
+    .form-field-label {
+        @apply block font-medium mb-2;
+    }
+
+    .main-header {
+        @apply text-center mb-4 text-3xl font-bold;
+    }
+}
