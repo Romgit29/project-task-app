@@ -6,9 +6,9 @@
     <title>{{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <nav class="bg-gray-800 text-white shadow-md mb-6">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<body class="bg-gray-50">
+    <nav class="bg-gray-800 text-white mb-6">
+        <div class="container px-6 py-4 flex">
             <div class="flex space-x-6">
                 <a href="{{ route('tasks.index') }}" class="font-medium hover:text-gray-300 {{ request()->routeIs('tasks.*') ? 'text-blue-400' : '' }}">
                     Задачи
@@ -20,7 +20,7 @@
         </div>
     </nav>
 
-    <main class="container mx-auto p-6">
+    <main class="container p-6">
         @if (session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ session('success') }}
