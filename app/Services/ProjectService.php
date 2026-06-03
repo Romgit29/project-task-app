@@ -16,7 +16,9 @@ class ProjectService
             'tasks as completed_tasks_count' => function ($query) {
                 $query->where('status', TaskStatus::Completed->value);
             }
-        ])->get();
+        ])
+        ->orderByDesc('id')
+        ->get();
 
         return $projects;
     }

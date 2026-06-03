@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskListRequest;
 use App\Models\Project;
 use App\Models\Task;
 use App\Services\TaskService;
-use Illuminate\Http\Request;
 use App\Http\Requests\TaskStoreRequest;
 
 class TaskController extends Controller
@@ -13,7 +13,7 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(TaskListRequest $request)
     {
         $tasks = (new TaskService())->list($request);
         $projects = Project::get();

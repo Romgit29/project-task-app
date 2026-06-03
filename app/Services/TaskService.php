@@ -13,6 +13,7 @@ class TaskService
         $tasks = Task::with('project')
             ->when($request->filled('status'), fn($query) => $query->where('status', $request->status))
             ->when($request->filled('project_id'), fn($query) => $query->where('project_id', $request->project_id))
+            ->orderByDesc('id')
             ->get();
 
         return $tasks;
